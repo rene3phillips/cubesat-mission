@@ -1,0 +1,51 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
+    color: #00ffea;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Glowing header */
+h1 {
+    font-size: 3rem;
+    color: #00ffea;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
+}
+
+/* Telemetry reading box */
+.reading {
+    font-size: 2.5rem;
+    padding: 20px 50px;
+    border: 2px solid #00ffea;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffea, 0 0 40px #00ffea;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Star container */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: drift linear infinite;
+}
+
+/* Animation for stars */
+@keyframes drift {
+    from { transform: translateY(0) translateX(0); opacity: 0.5; }
+    to { transform: translateY(-1200px) translateX(-800px); opacity: 1; }
+}
