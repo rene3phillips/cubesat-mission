@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*/venv/
+*.egg-info/
+*.egg
+
+# VS Code
+.vscode/
+
+# PlatformIO
+.pio/
+.platformio/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Arduino
+*.hex
+*.elf
+*.bin
+
+# Local configuration files
+*.log
