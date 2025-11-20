@@ -2,49 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CubeSat Telemetry Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>CubeSat Telemetry Dashboard</h1>
-    <div class="reading">
-        <span id="telemetry">Loading...</span>
+    <div class="container">
+        <!-- Page 1: CubeSat Telemetry Dashboard -->
+        <section id="dashboard" class="fullpage">
+            <h1>CubeSat Telemetry Dashboard</h1>
+            <div class="reading-card">
+                <div class="reading-item">
+                    <h3>Temperature</h3>
+                    <p id="temp">-- °C</p>
+                </div>
+                <div class="reading-item">
+                    <h3>Humidity</h3>
+                    <p id="hum">-- %</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: About the Mission -->
+        <section id="mission" class="fullpage">
+            <h2>About the Mission</h2>
+            <p>
+                The CubeSat Mission is an independent technology demonstration focused on the design, integration, 
+                and operation of a fully functional small-satellite platform. The objective is to develop and validate a compact 
+                flight system capable of collecting environmental measurements, executing onboard processing, and 
+                transmitting real-time telemetry through a custom ground segment.
+            </p>
+            <p>
+                The mission encompasses end-to-end spacecraft systems engineering, including avionics development, 
+                power management, environmental sensing, thermal considerations, and ground-to-payload communication 
+                architecture. All subsystems are being designed and tested to meet the operational expectations of a small 
+                research-class satellite.
+            </p>
+            <p>
+                Upon completion of ground qualification testing, the mission will advance to a high-altitude balloon flight. 
+                This near-space environment will serve as a proving ground to evaluate system performance, communication 
+                stability, and sensor behavior under reduced pressure, low temperatures, and high-altitude radiation 
+                exposure. Data collected during the flight will support verification of the payload, onboard software, 
+                telemetry framework, and overall mission readiness.
+            </p>
+            <p class="highlight">
+                This project demonstrates what can be achieved through disciplined engineering, iterative testing, and a 
+                commitment to replicating real aerospace development processes on an independent scale.
+            </p>
+        </section>
+
+        <!-- Page 3: About the Engineer -->
+        <section id="about" class="fullpage">
+            <div class="flex-box">
+                <div class="about-text">
+                    <h2>About the Engineer</h2>
+                    <p>
+                        The CubeSat Mission is led by Natasha Phillips, a multidisciplinary engineering student responsible for the 
+                        design, development, and testing of all spacecraft subsystems included in the project. Phillips serves as the 
+                        mission’s systems designer, software developer, payload integrator, and ground-segment architect. Her work 
+                        includes embedded systems, sensor integration, power system planning, and real-time telemetry pipelines. 
+                        She also designed and built the mission’s custom FastAPI backend and live dashboard to visualize telemetry 
+                        data.
+                    </p>
+                    <p>
+                        All spacecraft components within the mission scope, including electronics, firmware, telemetry software, 
+                        environmental sensing systems, testing procedures, and mission analysis, have been developed and 
+                        validated independently as part of her ongoing engineering training. The project reflects a hands-on, 
+                        systems-level approach to learning and demonstrates her ability to plan, build, and operate small-scale 
+                        spacecraft technologies while progressing through her studies.
+                    </p>
+                    <p>
+                        Phillips aims to expand this platform into more advanced prototypes and contribute to future aerospace and 
+                        satellite development efforts as her academic and professional experience grows.
+                    </p>
+                </div>
+                <div class="about-pic">
+                    <img src="profile.jpg" alt="photo of Natasha Phillips" class="profile-pic">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Connect and Collaboration -->
+        <footer>
+            <div>
+                <p>
+                    Connect with Natasha Phillips:
+                    <a href="" target="blank">Email</a> |
+                    <a href="" target="blank">GitHub</a> |
+                    <a href="" target="blank">LinkedIn</a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Bus frame constructed by Kyle Phillips: 
+                    <a href="https://www.linkedin.com/in/kyle-phillips-59b935198/" target="blank">LinkedIn</a>
+                </p>
+            </div>
+        </footer>
     </div>
-
-
-
-    
-    <!-- Starfield -->
-    <script>
-        const starCount = 100; // number of stars
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.top = Math.random() * window.innerHeight + 'px';
-            star.style.left = Math.random() * window.innerWidth + 'px';
-            star.style.animationDuration = (5 + Math.random() * 10) + 's'; // random speed
-            star.style.width = star.style.height = (1 + Math.random() * 2) + 'px'; // random size
-            document.body.appendChild(star);
-        }
-    </script>
-
-    <script>
-        const telemetryEl = document.getElementById('telemetry');
-
-        async function fetchTelemetry() {
-            try {
-                const response = await fetch('/telemetry/latest');
-                const data = await response.json();
-                telemetryEl.textContent = data.telemetry;
-            } catch (err) {
-                telemetryEl.textContent = "Error fetching data";
-            }
-        }
-
-        // Fetch immediately, then every 2 seconds
-        fetchTelemetry();
-        setInterval(fetchTelemetry, 2000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -16,10 +16,11 @@ void loop() {
   float hum = dht.readHumidity();
 
   // Print to serial
-  Serial.print("TEMP:");
-  Serial.print(temp);
-  Serial.print(",HUM:");
-  Serial.println(hum);
+Serial.print("{\"TEMP\":");
+Serial.print(temp);
+Serial.print(",\"HUM\":");
+Serial.print(hum);
+Serial.println("}");
 
   delay(2000); // 2 second delay
 }

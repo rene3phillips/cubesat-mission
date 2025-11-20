@@ -4,11 +4,12 @@ from fastapi.staticfiles import StaticFiles
 import serial
 import threading
 import time
+import json
 
-# 1️⃣ Create the FastAPI app 
+# Create the FastAPI app 
 app = FastAPI()
 
-# 2️⃣ Enable CORS
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # allow requests from any origin
@@ -17,13 +18,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 3️⃣ Serve the dashboard folder
+# Serve the dashboard folder
 app.mount("/dashboard", StaticFiles(directory="../dashboard"), name="dashboard")
 
-# 4️⃣ Initialize latest reading
+# Initialize latest reading
 latest_reading = "No data yet"
 
-# 5️⃣ Open serial port
+# Open serial port
 try:
     ser = serial.Serial('COM4', 9600, timeout=2)
     print("COM4 is free and opened successfully.")
@@ -31,7 +32,7 @@ except serial.SerialException as e:
     print(f"Error opening COM4: {e}")
     ser = None
 
-# 6️⃣ Background thread to read Arduino
+# Background thread to read Arduino
 def read_serial():
     global latest_reading
     while ser:
@@ -46,11 +47,12 @@ def read_serial():
 if ser:
     threading.Thread(target=read_serial, daemon=True).start()
 
-# 7️⃣ FastAPI endpoints
+# FastAPI endpoints
 @app.get("/telemetry/latest")
 def get_telemetry():
-    return {"telemetry": latest_reading}
-
-@app.get("/")
-def home():
-    return {"message": "CubeSat Telemetry API"}
+    global latest_reading
+    try:
+        data = json.loads(latest_reading)  # parse JSON string from Arduino
+    except:
+        data = {"TEMP": None, "HUM": None}  # fallback if Arduino output is invalid
+    return data
