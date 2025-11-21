@@ -40,8 +40,8 @@ serial_reader.start_serial()
 # 7. Pydantic schema for optional POST endpoint
 # ==============================
 class TelemetryInput(BaseModel):
-    temp: float
-    hum: float
+    temp: float # temp: Optional[float] = None OR temp: float | None = None
+    hum: float # temp: Optional[float] = None OR temp: float | None = None
     mission_name: str = "Unnamed Mission"
     status: str = "Pending"
     timestamp: str
