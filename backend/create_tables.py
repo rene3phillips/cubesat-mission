@@ -1,7 +1,8 @@
-from database import engine, Base
-import models  # Import models to attach them to Base
+from database import Base, engine
+import models
 
-if __name__ == "__main__":
-    print("Tables before create_all:", Base.metadata.tables.keys())
-    Base.metadata.create_all(bind=engine)
-    print("Tables after create_all:", Base.metadata.tables.keys())
+# Drop all tables
+Base.metadata.drop_all(bind=engine)
+
+# Recreate tables with new columns
+Base.metadata.create_all(bind=engine)
