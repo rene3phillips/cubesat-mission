@@ -4,7 +4,7 @@
 from sqlalchemy import Column, Integer, Float, String
 from database import Base  # Import the Base class from database.py
 
-class Mission(Base):
+class Mission(Base): # change to telemetry !!!
     """
     Mission model represents a telemetry reading in the database.
 
@@ -12,7 +12,7 @@ class Mission(Base):
     """
 
     # Name of the table in PostgreSQL
-    __tablename__ = "missions"
+    __tablename__ = "missions" # change to telemetry !!!
 
     # ------------------------------
     # Columns
