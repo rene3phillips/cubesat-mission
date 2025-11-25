@@ -8,26 +8,122 @@
 }
 
 body {
-    font-family: 'Orbitron', sans-serif;
+    align-items: center;
     background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
-    color: #e6e6e6; 
-    text-align: center;
-    height: 100vh;
+    color: #e6e6e6;
     display: flex;
     flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
     position: relative;
+    text-align: justify;
+}
+
+/* =========================
+   Mission Div
+========================= */
+#mission {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00ffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
+    color: #00ffea;
+    cursor: pointer;
+    display: inline-block;
+    height: 120px;
+    padding: 20px 40px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    width: 180px;
+}
+
+#mission:hover {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 25px #00ffea, 0 0 50px #ff69b4, 0 0 75px #ffffff;
+    color: #ffff33;
+    transform: scale(1.05);
+}
+
+#mission::after {
+    background-color: rgba(255, 255, 0, 0.9);
+    border-radius: 6px;
+    bottom: 100%;
+    color: #000;
+    content: "Start a new mission";
+    font-size: 0.9rem;
+    left: 50%;
+    opacity: 0;
+    padding: 5px 10px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#mission:hover::after {
+    opacity: 1;
+}
+
+/* =========================
+   Status Div
+========================= */
+#mission-status {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00ffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
+    color: #00ffea;
+    cursor: pointer;
+    display: inline-block;
+    height: 120px;
+    padding: 20px 40px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    width: 180px;
+}
+
+#mission-status:hover {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 25px #00ffea, 0 0 50px #ff69b4, 0 0 75px #ffffff;
+    color: #ffff33;
+    transform: scale(1.05);
+}
+
+#mission-status::after {
+    background-color: rgba(255, 255, 0, 0.9);
+    border-radius: 6px;
+    bottom: 100%;
+    color: #000;
+    content: "Change Status";
+    font-size: 0.9rem;
+    left: 50%;
+    opacity: 0;
+    padding: 5px 10px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#mission-status:hover::after {
+    opacity: 1;
 }
 
 /* =========================
    Scroll Snapping Container
 ========================= */
 .container {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
     height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
     scrollbar-width: none;
 }
 
@@ -35,27 +131,26 @@ body {
    Full-Page Sections
 ========================= */
 .fullpage {
-    scroll-snap-align: start;
-    height: 100vh;
+    align-items: center;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     justify-content: center;
-    align-items: center;
-    padding: 50px;
+    padding: 100px;
+    scroll-snap-align: start;
 }
 
 /* =========================
    Headers
 ========================= */
 h1, h2 {
-    text-shadow: 0 0 4px #00ffea, 0 0 8px #8a2be2, 0 0 12px #ff69b4;
     margin-bottom: 20px;
+    text-shadow: 0 0 4px #00ffea, 0 0 8px #8a2be2, 0 0 12px #ff69b4;
 }
 
 h1 {
-    font-size: 3rem;
     color: #00ffea;
-    margin-bottom: 20px;
+    font-size: 3rem;
 }
 
 /* =========================
@@ -69,50 +164,65 @@ h1 {
 }
 
 .reading-item {
-    width: 180px;
-    height: 120px;
-    padding: 20px;
+    align-items: center;
     background: rgba(0,0,0,0.4);
+    border: 1px solid #00ffff;
     border-radius: 12px;
+    box-shadow: 0 0 20px #00ffea, 0 0 40px #ff69b4;
     display: flex;
     flex-direction: column;
+    height: 120px;
     justify-content: center;
-    align-items: center;
-    border: 1px solid #00ffff;
-    box-shadow: 0 0 20px #00ffea, 0 0 40px #ff69b4;
+    padding: 20px;
     text-align: center;
+    width: 180px;
 }
 
 .reading-item h3 {
-    font-size: 1.1rem;
     color: #ff69b4;
+    font-size: 1rem;
     margin: 0;
 }
 
 .reading-item p {
-    margin-top: 10px;
-    font-size: 1.4rem;
-    font-weight: bold;
     color: #00ffea;
-    white-space: nowrap;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-top: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#camera {
+    width: 400px;
+}
+
+#livestream {
+    height: 400px;
+    width: 400px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
 }
 
 /* =========================
    Mission & About Text
 ========================= */
-#mission {
+#about-mission,
+#about {
     background: radial-gradient(circle at center, #111 0%, #222 100%);
 }
 
-#mission p,
+#about-mission p,
 #about p {
+    color: #e6e6e6;
     font-family: Arial, sans-serif;
     line-height: 1.8;
-    max-width: 750px;
     margin-bottom: 20px;
-    color: #e6e6e6;
+    max-width: 750px;
 }
 
 p.highlight {
@@ -123,18 +233,18 @@ p.highlight {
    About Page Flex Layout
 ========================= */
 .flex-box {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    max-width: 1000px;
+    justify-content: center;
     margin: 0 auto;
+    max-width: 1000px;
 }
 
 .about-text {
     flex: 1;
-    text-align: left;
+    text-align: justify;
 }
 
 .about-pic {
@@ -142,74 +252,58 @@ p.highlight {
 }
 
 .profile-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
     border: 4px solid #00ffff;
+    border-radius: 50%;
     box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
+    height: 300px;
+    width: 300px;
 }
 
-@media screen and (max-width: 768px) {
-    .flex-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
+/* =========================
+   Mission Logs
+========================= */
 
-    .about-text {
-        text-align: center;
-    }
-
-    .about-pic {
-        flex: none;
-        width: 100%;
-        display: block;
-        margin: 0 auto 20px;
-    }
-
-    /* Disable scroll snapping */
-    .container {
-        scroll-snap-type: none;
-        overflow-y: auto;
-    }
-
-    /* Allow sections to grow naturally */
-    .fullpage {
-        height: auto; 
-        min-height: 100vh; 
-        padding-bottom: 80px; 
-    }
-
-    /* Footer solid background */
-    footer {
-        background-color: #000000 !important;
-        z-index: 1000;
-    }
+.log-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.log-card:hover {
+    transform: scale(1.05);
+    color: rgba(255, 255, 0, 0.9);
+}
+
+.log-card h3 {
+    color: #ff69b4;
+}
+
+.log-card p {
+    font-family: Arial, sans-serif;
+}
+
 
 /* =========================
    Footer
 ========================= */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
     color: #e6e6e6;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    left: 0;
     padding: 10px 20px;
-    font-family: Arial, sans-serif;
+    position: fixed;
+    width: 100%;
     z-index: 1000;
+    font-family: Arial, sans-serif;
 }
 
 footer a {
     color: #00ffff;
-    text-decoration: none;
     margin: 0 8px;
+    text-decoration: none;
 }
 
 footer a:hover {
@@ -220,16 +314,87 @@ footer a:hover {
    Starfield Effect
 ========================= */
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
     background: white;
     border-radius: 50%;
+    height: 2px;
     opacity: 0.8;
+    position: absolute;
+    width: 2px;
     animation: drift linear infinite;
 }
 
 @keyframes drift {
-    from { transform: translateY(0) translateX(0); opacity: 0.5; }
-    to { transform: translateY(-1200px) translateX(-800px); opacity: 1; }
+    from {
+        opacity: 0.5;
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-1200px) translateX(-800px);
+    }
 }
+
+/* =========================
+   Temp - Add to Correct Category
+========================= */
+
+.sample-graph {
+    height: 400px;
+    width: 600px;
+
+
+}
+
+.logs-list {
+    gap: 100px;
+    text-align: justify;
+}
+
+.about-me {
+    gap: 40px;
+}
+
+#mission-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.5s ease, box-shadow 0.5s ease; /* smooth fade & glow */
+
+
+    /* Soft neon glow to match theme */
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4, 0 0 50px #ffffff;
+    border-radius: 10px; /* softens edges */
+    background-color: #000; /* black background to match your page */
+}
+
+
+
+/* Smooth fade-in when hovering log cards */
+.log-card img {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/*
+.log-card:hover img {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+
+#mission-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: box-shadow 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4, 0 0 50px #ffffff;
+    border-radius: 10px;
+    background-color: #000;
+} */
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+
