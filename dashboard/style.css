@@ -208,6 +208,8 @@ h1 {
     gap: 20px;
 }
 
+
+
 /* =========================
    Mission & About Text
 ========================= */
@@ -393,8 +395,102 @@ footer a:hover {
 } */
 
 
+
+
+
+
+
 /* =========================
    Responsive Design
 ========================= */
 
+@media screen and (max-width: 768px) {
+
+    body {
+        flex-direction: row;
+    }
+
+    .fullpage {
+        scroll-snap-align: none;
+        height: auto;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .reading-item {
+        height: 60px;
+        width: 90px;
+        padding: 5px;
+    }
+
+    .reading-item h3 {
+        font-size: 0.65rem;
+    }
+
+    .reading-item p {
+        font-size: 0.5rem;
+    }
+
+
+
+
+
+
+    h1 {
+        text-align: center;
+    }
+
+    /* removed mission logs (temporarily) */
+    #logs {
+        display: none;
+    }
+
+    #about-mission {
+        padding: 50px;
+    }
+
+    #about {
+        padding: 50px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: black;
+    }
+
+
+    .about-me {
+        display: flex;
+    }
+
+    .about-pic {
+        order: 2;
+        padding-bottom: 50px;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    #mission, #mission-status {
+        text-align: center;
+        height: 60px;
+        width: 90px;
+        padding: 5px;
+
+    }
+
+
+}
 
