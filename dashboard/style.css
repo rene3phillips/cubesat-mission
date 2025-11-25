@@ -415,6 +415,10 @@ footer a:hover {
         height: auto;
     }
 
+    h1 {
+        font-size: 2rem;
+    }
+
     .stats {
         display: flex;
         flex-direction: column;
@@ -425,12 +429,20 @@ footer a:hover {
         width: 100%;
         display: flex;
         justify-content: center;
+        margin-top: 0;
+
     }
+
+    .reading-card {
+        gap: 12px;
+        margin-top: 12px;
+    }
+
 
     .reading-item {
         height: 60px;
         width: 90px;
-        padding: 5px;
+        padding: 0px;
     }
 
     .reading-item h3 {
@@ -452,7 +464,7 @@ footer a:hover {
 
     /* removed mission logs (temporarily) */
     #logs {
-        display: none;
+        
     }
 
     #about-mission {
@@ -463,10 +475,15 @@ footer a:hover {
         padding: 50px;
     }
 
+    .livestream {
+        padding: 0;
+    }
+
     footer {
         flex-direction: column;
         align-items: flex-start;
         background-color: black;
+        font-size: .75rem;
     }
 
 
