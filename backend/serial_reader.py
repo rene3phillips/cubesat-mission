@@ -1,3 +1,7 @@
+# ==============================
+# 6. Serial Reader
+# ==============================
+
 import serial
 import threading
 import time
