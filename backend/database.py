@@ -18,11 +18,8 @@ engine = create_engine(DATABASE_URL)
 # ==============================
 # 3. Set up SessionLocal
 # ==============================
-SessionLocal = sessionmaker(
-    autocommit=False,   
-    autoflush=False,    
-    bind=engine         
-)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 
 def get_db():
 
@@ -31,6 +28,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
 
 # ==============================
 # 4. Set up Base for Models

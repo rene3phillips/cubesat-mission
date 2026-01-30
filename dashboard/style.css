@@ -2,263 +2,279 @@
    Global Layout & Reset
 ========================= */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    align-items: center;
-    background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
-    color: #e6e6e6;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Orbitron', sans-serif;
-    height: 100vh;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    text-align: justify;
+  align-items: center;
+  background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
+  color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: justify;
 }
 
 /* =========================
    Mission Div
 ========================= */
 #mission {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid #00ffff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
-    color: #00ffea;
-    cursor: pointer;
-    display: inline-block;
-    height: 120px;
-    padding: 20px 40px;
-    position: relative;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    width: 180px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 15px #00ffea,
+    0 0 30px #ff69b4;
+  color: #00ffea;
+  cursor: pointer;
+  display: inline-block;
+  height: 120px;
+  padding: 20px 40px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  width: 180px;
 }
 
 #mission:hover {
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 25px #00ffea, 0 0 50px #ff69b4, 0 0 75px #ffffff;
-    color: #ffff33;
-    transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow:
+    0 0 25px #00ffea,
+    0 0 50px #ff69b4,
+    0 0 75px #ffffff;
+  color: #ffff33;
+  transform: scale(1.05);
 }
 
 #mission::after {
-    background-color: rgba(255, 255, 0, 0.9);
-    border-radius: 6px;
-    bottom: 100%;
-    color: #000;
-    content: "Start a new mission";
-    font-size: 0.9rem;
-    left: 50%;
-    opacity: 0;
-    padding: 5px 10px;
-    pointer-events: none;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: opacity 0.2s ease-in-out;
-    white-space: nowrap;
-    z-index: 10;
+  background-color: rgba(255, 255, 0, 0.9);
+  border-radius: 6px;
+  bottom: 100%;
+  color: #000;
+  content: 'Start a new mission';
+  font-size: 0.9rem;
+  left: 50%;
+  opacity: 0;
+  padding: 5px 10px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 #mission:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* =========================
    Status Div
 ========================= */
 #mission-status {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid #00ffff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
-    color: #00ffea;
-    cursor: pointer;
-    display: inline-block;
-    height: 120px;
-    padding: 20px 40px;
-    position: relative;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    width: 180px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 15px #00ffea,
+    0 0 30px #ff69b4;
+  color: #00ffea;
+  cursor: pointer;
+  display: inline-block;
+  height: 120px;
+  padding: 20px 40px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  width: 180px;
 }
 
 #mission-status:hover {
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 25px #00ffea, 0 0 50px #ff69b4, 0 0 75px #ffffff;
-    color: #ffff33;
-    transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow:
+    0 0 25px #00ffea,
+    0 0 50px #ff69b4,
+    0 0 75px #ffffff;
+  color: #ffff33;
+  transform: scale(1.05);
 }
 
 #mission-status::after {
-    background-color: rgba(255, 255, 0, 0.9);
-    border-radius: 6px;
-    bottom: 100%;
-    color: #000;
-    content: "Change Status";
-    font-size: 0.9rem;
-    left: 50%;
-    opacity: 0;
-    padding: 5px 10px;
-    pointer-events: none;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: opacity 0.2s ease-in-out;
-    white-space: nowrap;
-    z-index: 10;
+  background-color: rgba(255, 255, 0, 0.9);
+  border-radius: 6px;
+  bottom: 100%;
+  color: #000;
+  content: 'Change Status';
+  font-size: 0.9rem;
+  left: 50%;
+  opacity: 0;
+  padding: 5px 10px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 #mission-status:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* =========================
    Scroll Snapping Container
 ========================= */
 .container {
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
 }
 
 /* =========================
    Full-Page Sections
 ========================= */
 .fullpage {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    padding: 100px;
-    scroll-snap-align: start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 100px;
+  scroll-snap-align: start;
 }
 
 /* =========================
    Headers
 ========================= */
-h1, h2 {
-    margin-bottom: 20px;
-    text-shadow: 0 0 4px #00ffea, 0 0 8px #8a2be2, 0 0 12px #ff69b4;
+h1,
+h2 {
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 4px #00ffea,
+    0 0 8px #8a2be2,
+    0 0 12px #ff69b4;
 }
 
 h1 {
-    color: #00ffea;
-    font-size: 3rem;
+  color: #00ffea;
+  font-size: 3rem;
 }
 
 /* =========================
    Telemetry Boxes
 ========================= */
 .reading-card {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .reading-item {
-    align-items: center;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid #00ffff;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #00ffea, 0 0 40px #ff69b4;
-    display: flex;
-    flex-direction: column;
-    height: 120px;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-    width: 180px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 20px #00ffea,
+    0 0 40px #ff69b4;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  width: 180px;
 }
 
 .reading-item h3 {
-    color: #ff69b4;
-    font-size: 1rem;
-    margin: 0;
+  color: #ff69b4;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .reading-item p {
-    color: #00ffea;
-    font-size: 1.15rem;
-    font-weight: bold;
-    margin-top: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  color: #00ffea;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #camera {
-    width: 400px;
+  width: 400px;
 }
 
 #livestream {
-    height: 400px;
-    width: 400px;
+  height: 400px;
+  width: 400px;
 }
 
 .stats {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
-
-
 
 /* =========================
    Mission & About Text
 ========================= */
 #about-mission,
 #about {
-    background: radial-gradient(circle at center, #111 0%, #222 100%);
+  background: radial-gradient(circle at center, #111 0%, #222 100%);
 }
 
 #about-mission p,
 #about p {
-    color: #e6e6e6;
-    font-family: Arial, sans-serif;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    max-width: 750px;
+  color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 750px;
 }
 
 p.highlight {
-    color: #f88dc3 !important;
+  color: #f88dc3 !important;
 }
 
 /* =========================
    About Page Flex Layout
 ========================= */
 .flex-box {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1000px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .about-text {
-    flex: 1;
-    text-align: justify;
+  flex: 1;
+  text-align: justify;
 }
 
 .about-pic {
-    flex: 0 0 250px;
+  flex: 0 0 250px;
 }
 
 .profile-pic {
-    border: 4px solid #00ffff;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4;
-    height: 300px;
-    width: 300px;
+  border: 4px solid #00ffff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px #00ffea,
+    0 0 30px #ff69b4;
+  height: 300px;
+  width: 300px;
 }
 
 /* =========================
@@ -266,115 +282,118 @@ p.highlight {
 ========================= */
 
 .log-card {
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .log-card:hover {
-    transform: scale(1.05);
-    color: rgba(255, 255, 0, 0.9);
+  transform: scale(1.05);
+  color: rgba(255, 255, 0, 0.9);
 }
 
 .log-card h3 {
-    color: #ff69b4;
+  color: #ff69b4;
 }
 
 .log-card p {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
-
 
 /* =========================
    Footer
 ========================= */
 footer {
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    bottom: 0;
-    color: #e6e6e6;
-    display: flex;
-    justify-content: space-between;
-    left: 0;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    font-family: Arial, sans-serif;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  color: #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
 }
 
 footer a {
-    color: #00ffff;
-    margin: 0 8px;
-    text-decoration: none;
+  color: #00ffff;
+  margin: 0 8px;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* =========================
    Starfield Effect
 ========================= */
 .star {
-    background: white;
-    border-radius: 50%;
-    height: 2px;
-    opacity: 0.8;
-    position: absolute;
-    width: 2px;
-    animation: drift linear infinite;
+  background: white;
+  border-radius: 50%;
+  height: 2px;
+  opacity: 0.8;
+  position: absolute;
+  width: 2px;
+  animation: drift linear infinite;
 }
 
 @keyframes drift {
-    from {
-        opacity: 0.5;
-        transform: translateY(0) translateX(0);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(-1200px) translateX(-800px);
-    }
+  from {
+    opacity: 0.5;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-1200px) translateX(-800px);
+  }
 }
 
 /* =========================
-   Temp - Add to Correct Category
+   Temporary - Add to Correct Category
 ========================= */
 
 .sample-graph {
-    height: 400px;
-    width: 600px;
-
-
+  height: 400px;
+  width: 600px;
 }
 
 .logs-list {
-    gap: 100px;
-    text-align: justify;
+  gap: 100px;
+  text-align: justify;
 }
 
 .about-me {
-    gap: 40px;
+  gap: 40px;
 }
 
 #mission-chart {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: opacity 0.5s ease, box-shadow 0.5s ease; /* smooth fade & glow */
+  width: 100%;
+  height: auto;
+  display: block;
+  transition:
+    opacity 0.5s ease,
+    box-shadow 0.5s ease; /* smooth fade & glow */
 
-
-    /* Soft neon glow to match theme */
-    box-shadow: 0 0 15px #00ffea, 0 0 30px #ff69b4, 0 0 50px #ffffff;
-    border-radius: 10px; /* softens edges */
-    background-color: #000; /* black background to match your page */
+  /* Soft neon glow to match theme */
+  box-shadow:
+    0 0 15px #00ffea,
+    0 0 30px #ff69b4,
+    0 0 50px #ffffff;
+  border-radius: 10px; /* softens edges */
+  background-color: #000; /* black background to match your page */
 }
-
-
 
 /* Smooth fade-in when hovering log cards */
 .log-card img {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 /*
@@ -394,120 +413,99 @@ footer a:hover {
     background-color: #000;
 } */
 
-
-
-
-
-
-
 /* =========================
    Responsive Design
 ========================= */
 
 @media screen and (max-width: 768px) {
+  body {
+    flex-direction: row;
+  }
 
-    body {
-        flex-direction: row;
-    }
+  .fullpage {
+    scroll-snap-align: none;
+    height: auto;
+  }
 
-    .fullpage {
-        scroll-snap-align: none;
-        height: auto;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .stats {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
 
-    .video {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 0;
+  .reading-card {
+    gap: 12px;
+    margin-top: 12px;
+  }
 
-    }
+  .reading-item {
+    height: 60px;
+    width: 90px;
+    padding: 0px;
+  }
 
-    .reading-card {
-        gap: 12px;
-        margin-top: 12px;
-    }
+  .reading-item h3 {
+    font-size: 0.65rem;
+  }
 
+  .reading-item p {
+    font-size: 0.5rem;
+  }
 
-    .reading-item {
-        height: 60px;
-        width: 90px;
-        padding: 0px;
-    }
+  h1 {
+    text-align: center;
+    width: 100%;
+    text-wrap: wrap;
+  }
 
-    .reading-item h3 {
-        font-size: 0.65rem;
-    }
+  #about-mission {
+    padding: 50px;
+  }
 
-    .reading-item p {
-        font-size: 0.5rem;
-    }
+  #about {
+    padding: 50px;
+  }
 
+  .livestream {
+    padding: 0;
+  }
 
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    font-size: 0.75rem;
+  }
 
+  .about-me {
+    display: flex;
+  }
 
+  .about-pic {
+    order: 2;
+    padding-bottom: 50px;
+  }
 
+  .about-text {
+    order: 1;
+  }
 
-    h1 {
-        text-align: center;
-    }
-
-    /* removed mission logs (temporarily) */
-    #logs {
-        
-    }
-
-    #about-mission {
-        padding: 50px;
-    }
-
-    #about {
-        padding: 50px;
-    }
-
-    .livestream {
-        padding: 0;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: black;
-        font-size: .75rem;
-    }
-
-
-    .about-me {
-        display: flex;
-    }
-
-    .about-pic {
-        order: 2;
-        padding-bottom: 50px;
-    }
-
-    .about-text {
-        order: 1;
-    }
-
-    #mission, #mission-status {
-        text-align: center;
-        height: 60px;
-        width: 90px;
-        padding: 5px;
-
-    }
-
-
+  #mission,
+  #mission-status {
+    text-align: center;
+    height: 60px;
+    width: 90px;
+    padding: 5px;
+  }
 }
-

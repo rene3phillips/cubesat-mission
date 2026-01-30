@@ -11,7 +11,8 @@ from datetime import datetime
 # Stores the latest telemetry reading as a JSON string
 latest_reading = json.dumps({"TEMP": None, "HUM": None, "TIMESTAMP": None})
 
-def start_serial(port='COM4', baud=9600):
+
+def start_serial(port="COM4", baud=9600):
     """
     Opens the serial port and starts a background thread to continuously read telemetry.
     """
@@ -40,17 +41,6 @@ def start_serial(port='COM4', baud=9600):
 
                         # Save latest reading globally
                         latest_reading = json.dumps(data)
-
-                        # === REMOVE DB SAVE HERE ===
-                        # Do NOT save here; frontend will handle saving when a mission is active
-                        # This prevents the "Unnamed Mission" entries
-                        # if temp is not None and hum is not None:
-                        #     db = SessionLocal()
-                        #     try:
-                        #         crud.save_reading(db, temp, hum)
-                        #         print(f"Saved: TEMP={temp}, HUM={hum}")
-                        #     finally:
-                        #         db.close()
 
                     except Exception as e:
                         print(f"Failed to parse line: {line} -> {e}")

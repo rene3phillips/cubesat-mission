@@ -1,5 +1,4 @@
 from database import Base, engine
-import models
 
 # Drop all tables
 Base.metadata.drop_all(bind=engine)

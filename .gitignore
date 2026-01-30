@@ -3,9 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.env          
 env/
-**/.env
-
 venv/
 */venv/
 *.egg-info/
@@ -14,9 +13,8 @@ venv/
 # VS Code
 .vscode/
 
-# PlatformIO
-.pio/
-.platformio/
+# Volumes
+pgdata/
 
 # OS files
 .DS_Store
@@ -27,5 +25,15 @@ Thumbs.db
 *.elf
 *.bin
 
-# Local configuration files
+# Logs
 *.log
+
+# PlatformIO
+.pio/
+.platformio/
+
+# Database dumps
+*.sql
+
+# Node modules
+node_modules/
