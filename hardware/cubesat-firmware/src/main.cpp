@@ -12,10 +12,10 @@ void setup() {
 }
 
 void loop() {
-  float temp = dht.readTemperature(); // Celsius
-  float hum = dht.readHumidity();
+  float temp = dht.readTemperature(); // Celsius 
+  float hum = dht.readHumidity(); 
 
-  // Print to serial
+  // Print to serial as a JSON string
 Serial.print("{\"TEMP\":");
 Serial.print(temp);
 Serial.print(",\"HUM\":");
