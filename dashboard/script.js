@@ -1,4 +1,5 @@
-const API_BASE = 'http://localhost:8001'; // backend 
+// const API_BASE = 'http://localhost:8001'; // backend
+const API_BASE = 'http://3.15.137.87:8001'; // deployed backend 
 
 // --- Create starfield ---
 const starCount = 100; // number of stars
